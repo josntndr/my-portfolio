@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Josephine J. Santander — Software Engineering Student & Web Developer</title>
+  <meta name="description"
+    content="Portfolio of Josephine J. Santander, a Computer Science (Software Engineering) student crafting clean, modern web experiences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+  <noscript>
+    <style>
+      body {
+        overflow: auto;
+      }
+
+      .intro-screen {
+        display: none;
+      }
+
+      .site-shell {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body class="intro-active">
+  <div class="site-bg" aria-hidden="true">
+    <span class="site-bg__blob site-bg__blob--1"></span>
+    <span class="site-bg__blob site-bg__blob--2"></span>
+    <span class="site-bg__blob site-bg__blob--3"></span>
+    <span class="site-bg__grid"></span>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar" id="scroll-progress-bar"></span>
+  </div>
+
+  <div class="intro-screen" id="intro-screen" aria-label="Portfolio introduction">
+    <div class="intro-screen__inner">
+      <p class="intro-screen__kicker">Welcome To My Portfolio</p>
+      <h1 class="intro-screen__title">Hi, I'm <span class="text-gradient">Josephine J. Santander</span></h1>
+      <p class="intro-screen__text">
+        Step into a space built to share my work, growth, and creative journey with a calm,
+        modern, and personal first impression.
+      </p>
+
+      <div class="intro-screen__actions">
+        <button class="button button-primary intro-screen__enter" type="button" id="intro-enter">
+          <span>Explore My Portfolio</span>
+          <svg viewBox="0 0 24 24" class="button__icon" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-shell" id="site-shell">
+    <header class="site-header" id="site-header">
+      <div class="container nav-wrapper">
+        <a href="#hero" class="brand" aria-label="Josephine Santander — home">
+          <span class="brand-name">Josephine <span class="brand-name__last">Santander</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+          aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#certifications" class="nav-link">Certifications</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#activities" class="nav-link">Activities</a>
+          <a href="#contact" class="nav-link nav-link--cta">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+    <section class="hero-section" id="hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <h1 data-reveal>
+            <span class="hero-name">Josephine J.</span>
+            <span class="hero-name text-gradient">Santander</span>
+          </h1>
+          <p class="hero-role" data-reveal>
+            <span class="hero-role__static">I build</span>
+            <span class="hero-role__rotate" id="hero-rotate" aria-live="polite">clean web interfaces</span>
+          </p>
+          <p class="hero-text" data-reveal>
+            Computer Science student specializing in Software Engineering — focused on clarity,
+            spacing, and strong visual rhythm to turn ideas into polished, responsive experiences.
+          </p>
+
+          <div class="hero-actions" data-reveal>
+            <a href="#projects" class="button button-primary">
+              <span>View Projects</span>
+              <svg viewBox="0 0 24 24" class="button__icon" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="#contact" class="button button-secondary">Contact Me</a>
+          </div>
+
+          <dl class="hero-stats" data-reveal>
+            <div class="hero-stat">
+              <dt class="hero-stat__value" data-count="2"><span data-count-target="2">0</span>+</dt>
+              <dd class="hero-stat__label">Years Learning</dd>
+            </div>
+            <div class="hero-stat">
+              <dt class="hero-stat__value" data-count="5"><span data-count-target="5">0</span>+</dt>
+              <dd class="hero-stat__label">Core Skills</dd>
+            </div>
+            <div class="hero-stat">
+              <dt class="hero-stat__value" data-count="2"><span data-count-target="2">0</span></dt>
+              <dd class="hero-stat__label">Certifications</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-framed" id="about">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker"><span class="section-kicker__num">01</span> About</p>
+          <h2>A little about me</h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="profile-block" data-reveal>
+            <div class="profile-frame">
+              <div class="profile-image-placeholder">
+                <span>Placeholder Profile Image</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content" data-reveal data-reveal-delay="1">
+            <p class="about-lead">
+              I'm a software engineering student who enjoys turning ideas into clean, usable, and
+              visually engaging web experiences.
+            </p>
+            <p>
+              I care about the small details — spacing, framing, and type scale — that make an
+              interface feel polished and effortless. This portfolio reflects how I like to work:
+              calm, modern, and intentional.
+            </p>
+
+            <div class="about-points">
+              <article>
+                <span>01</span>
+                <p>A clean, readable layout with enough breathing room to feel genuinely polished.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <p>Built to grow — ready to support real photos, stories, and project highlights.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <p>Designed to stay accessible and responsive across desktop, tablet, and mobile.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading section-heading-wide" data-reveal>
+          <p class="section-kicker"><span class="section-kicker__num">02</span> Education</p>
+          <h2>Where I've studied</h2>
+        </div>
+
+        <div class="info-grid education-grid">
+          <article class="info-card education-card" data-reveal>
+            <span class="card-glow" aria-hidden="true"></span>
+            <div class="education-card__logo-wrap">
+              <img src="images/uphsd-logo.png" alt="University of Perpetual Help System DALTA logo"
+                class="education-card__logo">
+            </div>
+            <span class="info-label badge badge--accent">2021 - 2023</span>
+            <h3>University of Perpetual Help System DALTA - Molino Campus</h3>
+            <ul class="education-card__details">
+              <li>
+                <span>Address</span>
+                <p>3 Molino Rd, Molino III, Bacoor, Cavite</p>
+              </li>
+              <li>
+                <span>Program / Track</span>
+                <p>Information and Communication Technology (ICT)</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="info-card education-card" data-reveal data-reveal-delay="1">
+            <span class="card-glow" aria-hidden="true"></span>
+            <div class="education-card__logo-wrap">
+              <img src="images/FEU-Tech_Logo.png" alt="FEU Institute of Technology logo"
+                class="education-card__logo">
+            </div>
+            <span class="info-label badge badge--success">2023 - Present</span>
+            <h3>FEU Institute of Technology</h3>
+            <ul class="education-card__details">
+              <li>
+                <span>Address</span>
+                <p>Padre Paredes St, Sampaloc, Manila, 1015 Metro Manila</p>
+              </li>
+              <li>
+                <span>Program</span>
+                <p>Bachelor of Science in Computer Science with specialization in Software Engineering</p>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading section-heading-wide" data-reveal>
+          <p class="section-kicker"><span class="section-kicker__num">03</span> Skills</p>
+          <h2>What I've worked with</h2>
+        </div>
+
+        <p class="skills-intro" data-reveal>
+          An honest snapshot of the skills I've built through hands-on web and software projects —
+          from frontend and backend development to UI/UX design. Still learning and growing with
+          every build.
+        </p>
+
+        <div class="skills-grid">
+          <article class="skill-cat" data-reveal>
+            <div class="skill-cat__head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 5l-2 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h3>Frontend Development</h3>
+            </div>
+            <p class="skill-cat__desc">
+              Experience building responsive, component-based interfaces, landing pages, and
+              dashboards for web apps.
+            </p>
+            <ul class="skill-tags">
+              <li class="skill-tag">HTML</li>
+              <li class="skill-tag">CSS</li>
+              <li class="skill-tag">JavaScript</li>
+              <li class="skill-tag">TypeScript</li>
+              <li class="skill-tag">React</li>
+              <li class="skill-tag">Tailwind CSS</li>
+              <li class="skill-tag">Responsive Design</li>
+              <li class="skill-tag">Component-based UI</li>
+              <li class="skill-tag">Dashboard UI</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat" data-reveal data-reveal-delay="1">
+            <div class="skill-cat__head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 7h.01M7 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+              <h3>Backend Development</h3>
+            </div>
+            <p class="skill-cat__desc">
+              Worked on server-side logic, REST APIs, authentication, and role-based access for
+              full-stack systems.
+            </p>
+            <ul class="skill-tags">
+              <li class="skill-tag">Node.js</li>
+              <li class="skill-tag">Express.js</li>
+              <li class="skill-tag">PHP</li>
+              <li class="skill-tag">REST APIs</li>
+              <li class="skill-tag">Authentication</li>
+              <li class="skill-tag">Role-Based Access</li>
+              <li class="skill-tag">CRUD Operations</li>
+              <li class="skill-tag">Server-side Validation</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat" data-reveal data-reveal-delay="2">
+            <div class="skill-cat__head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <h3>Database</h3>
+            </div>
+            <p class="skill-cat__desc">
+              Designed relational schemas and handled the data behind tracking and ticketing
+              features.
+            </p>
+            <ul class="skill-tags">
+              <li class="skill-tag">MySQL</li>
+              <li class="skill-tag">PostgreSQL</li>
+              <li class="skill-tag">Prisma ORM</li>
+              <li class="skill-tag">Database Design</li>
+              <li class="skill-tag">Relational Modeling</li>
+              <li class="skill-tag">Query Handling</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat" data-reveal>
+            <div class="skill-cat__head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 4v16" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <h3>UI/UX Design</h3>
+            </div>
+            <p class="skill-cat__desc">
+              Planned user flows and designed clean, readable, and accessible layouts across my
+              projects.
+            </p>
+            <ul class="skill-tags">
+              <li class="skill-tag">Wireframing</li>
+              <li class="skill-tag">UI Design</li>
+              <li class="skill-tag">UX Design</li>
+              <li class="skill-tag">Navigation Flow</li>
+              <li class="skill-tag">Form Design</li>
+              <li class="skill-tag">Dashboard Layouts</li>
+              <li class="skill-tag">Responsive Planning</li>
+              <li class="skill-tag">Accessibility &amp; Readability</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat" data-reveal data-reveal-delay="1">
+            <div class="skill-cat__head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h3>Security &amp; Deployment</h3>
+            </div>
+            <p class="skill-cat__desc">
+              Applied basic security practices and deployed working projects to the cloud with
+              Git-based workflows.
+            </p>
+            <ul class="skill-tags">
+              <li class="skill-tag">JWT Authentication</li>
+              <li class="skill-tag">Password Hashing</li>
+              <li class="skill-tag">Input Validation</li>
+              <li class="skill-tag">Environment Variables</li>
+              <li class="skill-tag">Secure File Upload</li>
+              <li class="skill-tag">Git</li>
+              <li class="skill-tag">GitHub</li>
+              <li class="skill-tag">Vercel</li>
+              <li class="skill-tag">Render</li>
+              <li class="skill-tag">GitHub Actions (CI/CD)</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat" data-reveal data-reveal-delay="2">
+            <div class="skill-cat__head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <h3>Programming &amp; Software Concepts</h3>
+            </div>
+            <p class="skill-cat__desc">
+              Applied object-oriented programming and design patterns — the core focus of my C++
+              thesis project, CodiNeo.
+            </p>
+            <ul class="skill-tags">
+              <li class="skill-tag">C++</li>
+              <li class="skill-tag">Object-Oriented Programming</li>
+              <li class="skill-tag">Design Patterns</li>
+              <li class="skill-tag">Code Analysis Concepts</li>
+              <li class="skill-tag">System Design</li>
+              <li class="skill-tag">Requirement Analysis</li>
+              <li class="skill-tag">Problem Solving</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-framed" id="certifications">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker"><span class="section-kicker__num">04</span> Certifications</p>
+          <h2>Proof of my learning</h2>
+        </div>
+
+        <div class="certification-carousel" data-cert-carousel aria-label="Certification carousel" data-reveal>
+          <button type="button" class="certification-carousel__button certification-carousel__button--prev"
+            data-cert-prev aria-label="Show previous certificates">
+            <span aria-hidden="true">&#8249;</span>
+          </button>
+
+          <div class="certification-carousel__viewport">
+            <div class="certification-carousel__track" data-cert-track>
+              <article class="info-card certification-card">
+                <span class="card-glow" aria-hidden="true"></span>
+                <span class="info-label badge badge--accent">Certificate 01</span>
+                <h3>Python</h3>
+                <div class="certificate-preview" aria-label="Python certificate preview">
+                  <img src="images/python.jpg" alt="Python certificate" class="certificate-preview__image"
+                    loading="lazy">
+                </div>
+              </article>
+
+              <article class="info-card certification-card">
+                <span class="card-glow" aria-hidden="true"></span>
+                <span class="info-label badge badge--success">Certificate 02</span>
+                <h3>PMI Project Management Ready</h3>
+                <div class="certificate-preview" aria-label="PMI Project Management Ready certificate preview">
+                  <img src="images/pmi-project-management-ready.jpg" alt="PMI Project Management Ready certificate"
+                    class="certificate-preview__image" loading="lazy">
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <button type="button" class="certification-carousel__button certification-carousel__button--next"
+            data-cert-next aria-label="Show next certificates">
+            <span aria-hidden="true">&#8250;</span>
+          </button>
+
+          <div class="certification-carousel__footer">
+            <p class="certification-carousel__hint">Swipe or use the arrows to browse.</p>
+            <div class="certification-carousel__dots" data-cert-dots aria-label="Certificate pages"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-framed" id="projects">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker"><span class="section-kicker__num">05</span> Projects</p>
+          <h2>Things I've been building</h2>
+        </div>
+
+        <div class="projects-layout">
+          <article class="project-card project-featured" data-reveal>
+            <span class="card-glow" aria-hidden="true"></span>
+            <div class="project-visual project-visual--shot">
+              <span class="project-visual__tag">Featured</span>
+              <img src="images/kwarta-preview.png"
+                alt="Kwarta Financial Tracker landing page preview" class="project-shot" loading="lazy">
+            </div>
+            <div class="project-copy">
+              <p class="project-meta">Full-Stack Web App</p>
+              <h3>Kwarta Financial Tracker</h3>
+              <p>
+                A web-based personal finance tracker that helps users monitor income, expenses,
+                savings goals, and monthly budgets through a clean, gamified pixel dashboard —
+                complete with streaks, badges, and monthly receipt summaries to encourage better
+                budgeting habits.
+              </p>
+              <ul class="project-tags">
+                <li class="badge badge--ghost">HTML</li>
+                <li class="badge badge--ghost">CSS</li>
+                <li class="badge badge--ghost">JavaScript</li>
+                <li class="badge badge--ghost">PHP</li>
+                <li class="badge badge--ghost">MySQL</li>
+                <li class="badge badge--ghost">Dashboard UI</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://kwarta-financial-tracker.vercel.app/" target="_blank" rel="noreferrer"
+                  class="button button-primary button-small">
+                  <span>Live Demo</span>
+                  <svg viewBox="0 0 24 24" class="button__icon" aria-hidden="true">
+                    <path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <a href="https://github.com/josntndr/Kwarta" target="_blank" rel="noreferrer"
+                  class="button button-secondary button-small">
+                  <svg viewBox="0 0 24 24" class="button__icon" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.61-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.8c.85 0 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
+                      fill="currentColor" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-featured" data-reveal data-reveal-delay="1">
+            <span class="card-glow" aria-hidden="true"></span>
+            <div class="project-visual project-visual--shot">
+              <span class="project-visual__tag">Featured</span>
+              <img src="images/strive-preview.png"
+                alt="Strive fitness and meal planning app landing page preview" class="project-shot" loading="lazy">
+            </div>
+            <div class="project-copy">
+              <p class="project-meta">Fitness &amp; Meal Planning App</p>
+              <h3>Strive</h3>
+              <p>
+                A personalized fitness, gym, and meal planning web app focused on helping users
+                build workout routines, follow smart meal plans, track progress, and stay consistent
+                with daily guidance.
+              </p>
+              <ul class="project-tags">
+                <li class="badge badge--ghost">Next.js</li>
+                <li class="badge badge--ghost">TypeScript</li>
+                <li class="badge badge--ghost">JavaScript</li>
+                <li class="badge badge--ghost">CSS</li>
+                <li class="badge badge--ghost">Responsive UI</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://strive-fitness-app.vercel.app/" target="_blank" rel="noreferrer"
+                  class="button button-primary button-small">
+                  <span>Live Demo</span>
+                  <svg viewBox="0 0 24 24" class="button__icon" aria-hidden="true">
+                    <path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <a href="https://github.com/josntndr/strive" target="_blank" rel="noreferrer"
+                  class="button button-secondary button-small">
+                  <svg viewBox="0 0 24 24" class="button__icon" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.61-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.8c.85 0 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
+                      fill="currentColor" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-reveal-delay="1">
+            <span class="card-glow" aria-hidden="true"></span>
+            <div class="project-visual project-visual-compact">
+              <span>Placeholder Image</span>
+            </div>
+            <div class="project-copy">
+              <p class="project-meta">Sample Project 02</p>
+              <h3>Placeholder Project Title</h3>
+              <p>Space for a concise summary, stack notes, or a short case study preview.</p>
+              <ul class="project-tags">
+                <li class="badge badge--ghost">UI/UX</li>
+                <li class="badge badge--ghost">Web</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#contact" class="button button-primary button-small">View Project</a>
+                <a href="#skills" class="button button-secondary button-small">Learn More</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-reveal-delay="2">
+            <span class="card-glow" aria-hidden="true"></span>
+            <div class="project-visual project-visual-compact">
+              <span>Placeholder Image</span>
+            </div>
+            <div class="project-copy">
+              <p class="project-meta">Sample Project 03</p>
+              <h3>Placeholder Project Title</h3>
+              <p>Built to stay balanced even when you later replace this with real project text.</p>
+              <ul class="project-tags">
+                <li class="badge badge--ghost">Design</li>
+                <li class="badge badge--ghost">Frontend</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#contact" class="button button-primary button-small">View Project</a>
+                <a href="#hero" class="button button-secondary button-small">Learn More</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="activities">
+      <div class="container">
+        <div class="section-heading section-heading-wide" data-reveal>
+          <p class="section-kicker"><span class="section-kicker__num">06</span> Activities &amp; Involvement</p>
+          <h2>Beyond the classroom</h2>
+        </div>
+
+        <div class="activity-slider" data-slider data-reveal>
+          <div class="activity-slider__viewport">
+            <article class="activity-slide is-active" data-slide>
+              <div class="activity-slide__image">
+                <span>Activity Photo Placeholder 01</span>
+              </div>
+              <div class="activity-slide__content">
+                <span class="info-label badge badge--accent">Activity 01</span>
+                <h3>Placeholder Organization or Event</h3>
+                <p>Add student groups, volunteer work, workshops, hackathons, or community participation here later.</p>
+              </div>
+            </article>
+
+            <article class="activity-slide" data-slide>
+              <div class="activity-slide__image">
+                <span>Activity Photo Placeholder 02</span>
+              </div>
+              <div class="activity-slide__content">
+                <span class="info-label badge badge--accent">Activity 02</span>
+                <h3>Placeholder Role or Contribution</h3>
+                <p>This can support short descriptions about what you did, learned, or contributed in each activity.</p>
+              </div>
+            </article>
+
+            <article class="activity-slide" data-slide>
+              <div class="activity-slide__image">
+                <span>Activity Photo Placeholder 03</span>
+              </div>
+              <div class="activity-slide__content">
+                <span class="info-label badge badge--accent">Activity 03</span>
+                <h3>Placeholder Leadership or Involvement</h3>
+                <p>The layout stays flexible so this section can grow naturally with your real experience later.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="activity-slider__controls">
+            <button type="button" class="activity-slider__button" data-slider-prev aria-label="Previous activity">
+              Previous
+            </button>
+            <p class="activity-slider__status" data-slider-status>1 / 3</p>
+            <button type="button" class="activity-slider__button" data-slider-next aria-label="Next activity">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading section-heading-wide" data-reveal>
+          <p class="section-kicker"><span class="section-kicker__num">07</span> Contact</p>
+          <h2>Let's connect</h2>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-panel" data-reveal>
+            <span class="card-glow" aria-hidden="true"></span>
+            <p class="contact-intro">Have an opportunity or just want to say hi? I'd love to hear from you.</p>
+            <ul class="contact-list">
+              <li>
+                <div class="contact-item-label">
+                  <span class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25V6.75Zm1.9.1 6.6 5.08a.8.8 0 0 0 .98 0l6.62-5.08H4.9Zm14.6 1.54-6.03 4.64a2.3 2.3 0 0 1-2.94 0L4.5 8.39v8.86c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25V8.39Z" />
+                    </svg>
+                  </span>
+                  <span>Email</span>
+                </div>
+                <a href="mailto:santanderjosephine24@gmail.com">santanderjosephine24@gmail.com</a>
+              </li>
+              <li>
+                <div class="contact-item-label">
+                  <span class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12ZM5.62 9.75h2.63V18H5.62V9.75Zm4.25 0h2.52v1.13h.04c.35-.67 1.21-1.38 2.5-1.38 2.67 0 3.16 1.76 3.16 4.05V18h-2.62v-3.94c0-.94-.02-2.15-1.31-2.15-1.31 0-1.51 1.02-1.51 2.08V18H9.87V9.75Z" />
+                    </svg>
+                  </span>
+                  <span>LinkedIn</span>
+                </div>
+                <a href="https://www.linkedin.com/in/josephine-santander-796883357/" target="_blank" rel="noreferrer">josephine-santander-796883357</a>
+              </li>
+              <li>
+                <div class="contact-item-label">
+                  <span class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.61-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.8c.85 0 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z" />
+                    </svg>
+                  </span>
+                  <span>GitHub</span>
+                </div>
+                <a href="https://github.com/josntndr" target="_blank" rel="noreferrer">github.com/josntndr</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>© 2026 Josephine J. Santander. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"
+  role="img" aria-label="J">
+  <defs>
+    <linearGradient id="jGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f472b6" />
+      <stop offset="1" stop-color="#db2777" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#jGrad)" />
+  <path d="M38 18 V36 a10 10 0 0 1 -10 10 a10 10 0 0 1 -10 -10"
+    fill="none" stroke="#ffffff" stroke-width="6"
+    stroke-linecap="round" stroke-linejoin="round" />
+</svg>
