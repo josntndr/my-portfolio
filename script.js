@@ -319,6 +319,94 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   renderSlider();
 });
 
+document.querySelectorAll("[data-activity-photo-slider]").forEach((photoSlider) => {
+  const photos = Array.from(photoSlider.querySelectorAll("[data-activity-photo]"));
+  const prevButton = photoSlider.querySelector("[data-activity-photo-prev]");
+  const nextButton = photoSlider.querySelector("[data-activity-photo-next]");
+  const status = photoSlider.querySelector("[data-activity-photo-status]");
+
+  if (!photos.length) {
+    return;
+  }
+
+  let photoIndex = 0;
+  let touchStartX = 0;
+  let touchDeltaX = 0;
+
+  const renderPhoto = () => {
+    photos.forEach((photo, currentIndex) => {
+      photo.classList.toggle("is-active", currentIndex === photoIndex);
+    });
+
+    if (status) {
+      status.textContent = `${photoIndex + 1} / ${photos.length}`;
+    }
+
+    if (prevButton) {
+      prevButton.disabled = photos.length <= 1;
+    }
+
+    if (nextButton) {
+      nextButton.disabled = photos.length <= 1;
+    }
+  };
+
+  const goToPhoto = (nextIndex) => {
+    photoIndex = (nextIndex + photos.length) % photos.length;
+    renderPhoto();
+  };
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      goToPhoto(photoIndex - 1);
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      goToPhoto(photoIndex + 1);
+    });
+  }
+
+  photoSlider.tabIndex = 0;
+
+  photoSlider.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goToPhoto(photoIndex - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      goToPhoto(photoIndex + 1);
+    }
+  });
+
+  photoSlider.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+    touchDeltaX = 0;
+  }, { passive: true });
+
+  photoSlider.addEventListener("touchmove", (event) => {
+    touchDeltaX = event.changedTouches[0].clientX - touchStartX;
+  }, { passive: true });
+
+  photoSlider.addEventListener("touchend", () => {
+    if (Math.abs(touchDeltaX) < 48) {
+      return;
+    }
+
+    if (touchDeltaX < 0) {
+      goToPhoto(photoIndex + 1);
+      return;
+    }
+
+    goToPhoto(photoIndex - 1);
+  });
+
+  renderPhoto();
+});
+
 /* ---------------------------------------------------------------------------
  * UI polish: scroll reveal, scroll-spy nav, progress bar, header state,
  * stat counters, role rotator, card glow, and back-to-top.
