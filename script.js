@@ -4,8 +4,52 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const introScreen = document.querySelector("#intro-screen");
 const introEnter = document.querySelector("#intro-enter");
 const heroSection = document.querySelector("#hero");
+const nameRevealEls = document.querySelectorAll("[data-name-reveal]");
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function revealNameText(el) {
+  const finalText = el.textContent.trim();
+
+  if (!finalText || prefersReducedMotion) {
+    el.textContent = finalText;
+    return;
+  }
+
+  const rollingChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let frame = 0;
+  const stagger = 3;
+  const holdFrames = 12;
+  const totalFrames = finalText.length * stagger + holdFrames;
+
+  const roll = () => {
+    const text = Array.from(finalText, (char, index) => {
+      if (char === " " || char === ".") {
+        return char;
+      }
+
+      if (frame / stagger > index) {
+        return char;
+      }
+
+      return rollingChars[Math.floor(Math.random() * rollingChars.length)];
+    }).join("");
+
+    el.textContent = text;
+    frame += 1;
+
+    if (frame <= totalFrames) {
+      window.setTimeout(roll, 55);
+      return;
+    }
+
+    el.textContent = finalText;
+  };
+
+  roll();
+}
+
+nameRevealEls.forEach((el) => revealNameText(el));
 
 function closeIntro(options = {}) {
   if (!introScreen) {

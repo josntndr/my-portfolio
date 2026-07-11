@@ -221,11 +221,12 @@ body.intro-active .site-shell {
 .intro-screen__inner {
   position: relative;
   z-index: 1;
-  width: min(680px, 100%);
+  width: min(1240px, 100%);
   min-height: calc(100vh - 3rem);
   display: grid;
-  align-content: center;
+  place-content: center;
   justify-items: center;
+  gap: 1.35rem;
   text-align: center;
   padding: 1rem 0;
 }
@@ -242,24 +243,20 @@ body.intro-active .site-shell {
 }
 
 .intro-screen__title {
-  max-width: 14ch;
-  margin: 0.9rem auto 0;
-  font-size: clamp(2.6rem, 8vw, 5.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: clamp(2.5rem, 6.2vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: 0;
   text-wrap: balance;
   opacity: 0;
   animation: intro-fade-up 0.8s ease 0.16s forwards;
 }
 
-.intro-screen__text {
-  max-width: 38ch;
-  margin: 1.3rem auto 0;
-  color: var(--muted);
-  line-height: 1.8;
-  text-wrap: pretty;
-  opacity: 0;
-  animation: intro-fade-up 0.8s ease 0.28s forwards;
+.intro-name {
+  display: block;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .intro-screen__actions {
@@ -268,9 +265,9 @@ body.intro-active .site-shell {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 2.2rem;
+  margin-top: 0.35rem;
   opacity: 0;
-  animation: intro-fade-up 0.8s ease 0.4s forwards;
+  animation: intro-fade-up 0.8s ease 0.28s forwards;
 }
 
 .intro-screen__enter {
@@ -783,17 +780,16 @@ body.intro-active .site-shell {
   border-radius: var(--radius-lg);
 }
 
-.profile-image-placeholder {
+.profile-image {
+  display: block;
+  width: 100%;
   min-height: 360px;
+  max-height: 460px;
   border-radius: 20px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  background:
-    linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(244, 114, 182, 0.12)),
-    #fff5fa;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
   border: 1px solid rgba(236, 72, 153, 0.12);
-  color: var(--muted);
 }
 
 .about-lead {
@@ -1871,18 +1867,17 @@ body.intro-active .site-shell {
 
   .intro-screen__inner {
     min-height: calc(100vh - 2rem);
-    align-content: start;
-    padding-top: 1.25rem;
+    padding-top: 0;
   }
 
-  .intro-screen__text {
-    max-width: 30ch;
+  .intro-screen__title {
+    font-size: 1.9rem;
   }
 
   .intro-screen__actions {
     width: 100%;
     flex-direction: column;
-    margin-top: 1.5rem;
+    margin-top: 0.35rem;
   }
 
   .intro-screen__enter {
@@ -1909,7 +1904,7 @@ body.intro-active .site-shell {
     grid-template-columns: 1fr;
   }
 
-  .profile-image-placeholder {
+  .profile-image {
     min-height: 280px;
   }
 
