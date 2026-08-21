@@ -18,8 +18,8 @@ function revealNameText(el) {
 
   const rollingChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let frame = 0;
-  const stagger = 3;
-  const holdFrames = 12;
+  const stagger = 2;
+  const holdFrames = 4;
   const totalFrames = finalText.length * stagger + holdFrames;
 
   const roll = () => {
@@ -39,7 +39,7 @@ function revealNameText(el) {
     frame += 1;
 
     if (frame <= totalFrames) {
-      window.setTimeout(roll, 55);
+      window.setTimeout(roll, 20);
       return;
     }
 
@@ -50,6 +50,46 @@ function revealNameText(el) {
 }
 
 nameRevealEls.forEach((el) => revealNameText(el));
+
+/* ---------------------------------------------------------------------------
+ * Technology Icons - Mouse Parallax Effect
+ * ------------------------------------------------------------------------- */
+const techElements = document.querySelectorAll('.tech-showcase [data-depth]');
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (techElements.length && !prefersReducedMotion && !isTouchDevice) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    if (!introScreen || introScreen.classList.contains('is-hidden')) return;
+
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  function updateParallax() {
+    if (!introScreen || introScreen.classList.contains('is-hidden')) return;
+
+    // Smooth interpolation
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+
+    techElements.forEach((element) => {
+      const depth = parseFloat(element.dataset.depth) || 0.02;
+      const moveX = currentX * 50 * depth;
+      const moveY = currentY * 50 * depth;
+
+      element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+
+    requestAnimationFrame(updateParallax);
+  }
+
+  updateParallax();
+}
 
 function closeIntro(options = {}) {
   if (!introScreen) {
